@@ -1,0 +1,32 @@
+{% extends 'crm/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<html>
+    <body>
+        <style>
+            body {
+                background-color: #DAF7A6;
+            }
+        </style>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Welcome to the Customers-Addition Page</div>
+                        <div class="panel-body">
+                            Maverick Food services, Ingredients For Your Success!
+                            <p></p>
+                            <p>Please add a new Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1>Add a New Customer</h1>
+        <form method="POST" class="customer-form">{% csrf_token %}
+              {{ form|crispy }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+    </body>
+</html>
+{% endblock %}

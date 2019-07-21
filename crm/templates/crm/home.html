@@ -1,0 +1,75 @@
+{% extends 'crm/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<html>
+    <body>
+        <style>
+            body {
+                background-color: #E8F9FF;
+            }
+        </style>
+        {% if user.is_authenticated %}
+            <div class="page-container">
+
+                <h2 class="top-menu">Hello {{ user.username }},</h2>
+                <p>Please choose from below options.</p>
+
+            </div>
+        {% endif %}
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="links">
+                        <!-- Example row of columns -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="thumbnail">
+                                    <img src="{% static "images/customer.jpg" %}" alt="customer"/>
+                                    <div class="caption">
+                                        <h2>Customer</h2>
+                                        <p><b>We see our success in our customers success</b></p>
+                                        <p>Browse, edit existing or enroll new customers as well as view summarized
+                                            reports of your profile</p>
+                                        <p><a class="btn btn-primary" href="{% url 'crm:customer_list' %}"
+                                              role="button">View
+                                            details &raquo;</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="thumbnail">
+                                    <img src="{% static "images/cupcakes.jpeg" %}" alt="cupcakes"/>
+                                    <div class="caption">
+                                        <h2>Services</h2>
+                                        <p><b>Great services start with great catering</b></p>
+                                        <p>Browse, modify or add new catering and delivery services for your next
+                                            event here at UNO</p>
+                                        <p><a class="btn btn-primary" href="{% url 'crm:service_list' %}"
+                                              role="button">View
+                                            details &raquo;</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="thumbnail">
+                                    <img src="{% static "images/lunch.jpeg" %}" alt="lunch"/>
+                                    <div class="caption">
+                                        <h2>Products</h2>
+                                        <p><b>Add some character to your event</b></p>
+                                        <p>Order boxed lunches, cakes for that special someone, get well balloons,
+                                            or flowers for your lover</p>
+                                        <p><a class="btn btn-primary" href="{% url 'crm:product_list' %}"
+                                              role="button">View
+                                            details &raquo;</a></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}
